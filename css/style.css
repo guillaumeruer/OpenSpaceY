@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-Regular.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #222831;
+    width: 100%;
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+#progressbar {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 20px;
+    height: 0;
+    background: linear-gradient(180deg, #FF0000, #FF6600, #ffdd00);
+    border-radius: 10px;
+}
+
+#rocket {
+    width: 60px;
+    height: auto;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+/* HEADER */
+
+header {
+    background: #393e46;
+    height: 50px;
+}
+
+header hr {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border: none;
+    height: 5px;
+    background: linear-gradient(90deg, #42adf8, #00ff59);
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+nav {
+    width: 50%;
+    float: right;
+    padding: 15px 50px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+/* MAIN */
+
+main {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h1 {
+    padding: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFF;
+}
+
+h2 {
+    padding: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: lighter;
+    color: #FFF;
+}
+
+h3 {
+    padding: 20px 0;
+    font-weight: lighter;
+    color: #FFF;
+}
+
+p {
+    color: #fff;
+}
+
+/* ASSURANCES */
+
+section {
+    width: 100%;
+    height: 400px;
+    padding: 40px;
+    background: #222831;
+    border-radius: 28px;
+}
+
+.sectionborder {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    background: linear-gradient(90deg, #42adf8, #00ff59);
+    padding: 1px;
+    border-radius: 30px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #FFF;
+    transform: rotate(-30deg) skew(25deg);
+}
+
+#user {
+    padding: 20px;
+    visibility: hidden;
+    position: absolute;
+    top: 54px;
+    right: 40px;
+    height: 300px;
+    width: 300px;
+    background: #fff;
+    border-radius: 30px;
+}
+
+.login-form h3 {
+    text-align: center;
+    color: #222831;
+}
+
+.textb {
+    border-bottom: solid 2px #adadad;
+    position: relative;
+    margin: 30px 0;
+}
+
+.textb input {
+    border: none;
+    color: #333;
+    background: red;
+    width: 100%;
+}

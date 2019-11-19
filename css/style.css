@@ -184,3 +184,7 @@ section {
     background: red;
     width: 100%;
 }
+
+.gauche {
+    transform: scaleX(-1);
+}

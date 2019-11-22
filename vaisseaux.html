@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/fonts/FontAwesome/all.css">
     <script src="js/jquery.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/vaisseaux.js"></script>
     <title>SpaceY - Index</title>
 </head>
 
@@ -37,21 +36,22 @@
     <div class="container-vaisseaux">
       <h1>Modification de votre vaisseau</h1>
       <div class="slider-vaisseaux">
-        <img class="slider" src="img/slider/image1.jpg" style="width:100%">
-        <img class="slider" src="img/slider/image2.png" style="width:100%">
-      <!--  <img class="slider" src="img/slider/image3.png" style="width:100%"> -->
+        <img class="slider" id="s1" src="img/slider/image1.jpg" style="width:100%">
+        <img class="slider" id="s2" src="img/slider/image2.png" style="width:100%">
+        <img class="slider" id="s3" src="img/slider/image3.png" style="width:100%">
       </div>
 
-      <div class="bouton-vaisseaux">
-        <button class="bouton-vaisseaux-bouton" onclick="currentDiv(1)">1</button>
-        <button class="bouton-vaisseaux-bouton" onclick="currentDiv(2)">2</button>
-        <button class="bouton-vaisseaux-bouton" onclick="currentDiv(3)">3</button>
-      </div>
+      <form class="bouton-vaisseaux">
+        <input type="radio" class="bouton-vaisseaux-bouton" name="type-vaisseau" value="Lessaturn" id="b1"><label for="b1"><i class="fas fa-satellite"></i><span>Lessaturn</span></label>
+        <input type="radio" class="bouton-vaisseaux-bouton" name="type-vaisseau" value="Zetrounwar" id="b2"><label for="b2" checked><i class="fas fa-space-shuttle"></i><span>Zetrounwar</span></label>
+        <input type="radio" class="bouton-vaisseaux-bouton" name="type-vaisseau" value="Unmetaihor" id="b3"><label for="b3"><i class="fas fa-rocket"></i><span>Unmetaihor</span></label>
+      </form>
     </div>
 
     </main>
 
 
+<script src="js/vaisseaux.js"></script>
 </body>
 
 </html>

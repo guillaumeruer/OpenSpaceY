@@ -25,22 +25,18 @@ html {
 
 .slider-vaisseaux {
   width: 500px;
-  height: 283px;
-  border: solid 2px #2f3542;
-  border-radius: 8px;
+  height: 285px;
+  border: solid 4px #2f3542;
+  border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   margin: auto;
 }
 
-.red {
-  color: red;
-}
 
 h1 {
   text-transform: uppercase;
   color: #ff4757;
   text-align: center;
-  margin-bottom: 5px;
 }
 
 .bouton-vaisseaux {
@@ -61,7 +57,7 @@ h1 {
 }
 
 
-/* Carousel modafacka */
+/* Bouton radio pour slider */
 
 
 input[type="radio"] {
@@ -79,12 +75,13 @@ label {
   color: #ff4757;
   transition: 0.2s;
   transition-timing-function: ease-in-out;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 5px;
   margin-right: 5px;
+  background-color: rgba(255, 255, 255, 0.8)
 }
 
-.fas {
+.btnfa {
   font-size: 30px;
   position: absolute;
   top: 50%;
@@ -102,22 +99,10 @@ label>span {
 }
 
 input[type='radio']:checked+label {
-  background: #ff4757;
-  color: #f1f2f6;
-}
-
-label:hover {
-  cursor: pointer;
-}
-
-#b2:checked+label {
-  background: #ff6348;
-  border: 4px solid #ff6348;
-}
-
-#b1:checked+label {
-  background: #ffa502;
-  border: 4px solid #ffa502;
+  background: #2f3542;
+  color: #2ed573;
+  border: 4px solid #2ed573;
+  box-shadow: 0px 0px 10px rgba(46, 213, 115, 0.5);
 }
 
 h3 {

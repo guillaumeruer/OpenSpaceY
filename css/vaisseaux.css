@@ -27,10 +27,10 @@ html {
   margin: 0 100px;
 }
 
-.slider {
+.slider-container {
   position: relative;
   float: left;
-  padding: 100px;
+  padding-left: 100px;
 }
 
 .slider-vaisseaux {
@@ -40,6 +40,11 @@ html {
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   margin: auto;
+}
+
+.slider-vaisseaux img {
+  width: 492px;
+  height: auto;
 }
 
 

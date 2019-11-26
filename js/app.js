@@ -20,6 +20,8 @@ function init() {
             $('#user').css("visibility", "hidden");
         }
     })
+
+    comparatif();
 }
 
 window.onload = init;

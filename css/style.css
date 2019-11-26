@@ -133,7 +133,7 @@ p {
     color: #fff;
 }
 
-/* ASSURANCES */
+/* ASSURANCES
 
 section {
     width: 100%;
@@ -167,7 +167,7 @@ section {
     background: #FFF;
     transform: rotate(-30deg) skew(25deg);
 }
-
+ */
 #user {
     padding: 20px;
     visibility: hidden;
@@ -202,6 +202,7 @@ section {
     transform: scaleX(-1);
 }
 
+
 /* PANIER */
 
 .liste-prod {
@@ -222,3 +223,4 @@ hr {
     height: 100%;
     padding: 10px 50px 40px 50px;
 }
+

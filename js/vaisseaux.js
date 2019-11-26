@@ -12,7 +12,7 @@ $(".bouton-vaisseaux-bouton").on("click", function (event) {
   id = boutonId.replace("b", "")
 
   if (id == 1) {
-
+    $(".icones-vaisseaux").css({ fill : "#2ed573"});
     $("#s1").fadeIn();
     $("#s2").css("display", "none");
     $("#s3").css("display", "none");

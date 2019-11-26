@@ -1,12 +1,11 @@
 $(document).ready(function () {
-
     let j = parseInt(sessionStorage.getItem("compteur"));
+    console.log(j);
     let i = 1;
     while (i <= j) {
-
+        console.log("vaisseau" + i);
         var vaisseau = JSON.parse(sessionStorage.getItem("vaisseau" + i));
-        i += 1;
-
+        console.log(vaisseau)
         let prod = document.createElement("div");
         prod.setAttribute('class', 'produit');
         let type = document.createElement("h3");
@@ -26,7 +25,7 @@ $(document).ready(function () {
         let hr = document.createElement("hr");
         document.querySelector(".liste-prod").appendChild(prod);
         document.querySelector(".liste-prod").appendChild(hr);
-
+        i += 1;
     }
 
 });

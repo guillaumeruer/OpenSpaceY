@@ -2,7 +2,8 @@ let i = 1;
 let j;
 
 $(document).ready(function () {
-  $("#b2").attr("checked", true)
+  $("#b2").attr("checked", true);
+  console.log(sessionStorage.getItem("compteur"));
 })
 
 
@@ -35,6 +36,7 @@ $('#submitBtn').click(function () {
   let couleur = $("input[name='couleur']:checked").val();
   let aile = $("input[name='aile']:checked").val();
   let reacteur = $("input[name='reacteur']:checked").val();
+  alert(type + couleur + aile + reacteur);
 
   let vaisseau = {
     "type": type,
@@ -43,19 +45,17 @@ $('#submitBtn').click(function () {
     "reacteur": reacteur
   }
 
-  if (sessionStorage.getItem("compteur") === "undefined") {
+  if (sessionStorage.getItem("compteur") === null || sessionStorage.getItem("compteur") === undefined || isNaN(sessionStorage.getItem("compteur"))) {
     sessionStorage.setItem("compteur", i);
+    j = 1;
   } else {
-    sessionStorage.compteur = parseInt(sessionStorage.compteur) + 1;
     j = parseInt(sessionStorage.getItem("compteur"));
+    j += 1;
+    alert(j);
+    sessionStorage.setItem("compteur", j);
   }
   let id = "vaisseau" + j;
-
+  alert(id);
   sessionStorage.setItem(id, JSON.stringify(vaisseau));
-  /*sessionStorage.setItem("type-vaisseau", type);
-  sessionStorage.setItem("couleur-vaisseau", couleur);
-  sessionStorage.setItem("aile-vaisseau", aile);
-  sessionStorage.setItem("reacteur-vaisseau", reacteur);*/
-
   window.location = "panier.html";
 })

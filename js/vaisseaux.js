@@ -1,9 +1,13 @@
 let i = 1;
 let j;
 
+
 $(document).ready(function () {
   $("#b2").attr("checked", true);
   console.log(sessionStorage.getItem("compteur"));
+  $("#b1v1").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+  $("#b3v3").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+  $("#b2v2").css("filter","invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
 })
 
 
@@ -12,23 +16,46 @@ $(".bouton-vaisseaux-bouton").on("click", function (event) {
   id = boutonId.replace("b", "")
 
   if (id == 1) {
-    $(".icones-vaisseaux").css({ fill : "#2ed573"});
+    $("#b1v1").css("filter","invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#b2v2").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b3v3").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
     $("#s1").fadeIn();
     $("#s2").css("display", "none");
     $("#s3").css("display", "none");
   }
 
   if (id == 2) {
+    $("#b1v1").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b3v3").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b2v2").css("filter","invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
     $("#s1").css("display", "none")
     $("#s2").fadeIn();
     $("#s3").css("display", "none")
   }
 
   if (id == 3) {
+    $("#b1v1").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b2v2").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b3v3").css("filter","invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
     $("#s1").css("display", "none")
     $("#s2").css("display", "none")
     $("#s3").fadeIn();
   };
+})
+
+$(".couleur-vaisseaux").on("click",function(event){
+  couleurV = $("input[name='couleur']:checked").val();
+
+  if (couleurV == "Bordeaux"){
+      $(".slider").css("filter","invert(21%) sepia(37%) saturate(5978%) hue-rotate(345deg) brightness(98%) contrast(84%)");
+  }
+  if (couleurV == "Beige"){
+      $(".slider").css("filter","invert(82%) sepia(4%) saturate(4335%) hue-rotate(328deg) brightness(115%) contrast(121%)");
+  }
+  if (couleurV == "Gris"){
+      $(".slider").css("filter","invert(17%) sepia(4%) saturate(1534%) hue-rotate(147deg) brightness(91%) contrast(87%)");
+  }
+
 })
 
 $('#submitBtn').click(function () {

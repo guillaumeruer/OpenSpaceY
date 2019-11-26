@@ -76,7 +76,7 @@ html>body{
     margin-right: 50px;
 }
 .border {
-    width: 45%;
+    width: 30%;
     margin: 20px 0px;
     background: linear-gradient(90deg, #42adf8, #00ff59);
     box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
@@ -89,14 +89,71 @@ html>body{
     height: 100%;
     padding: 25px 30px;
 }
-.assurance >h2{
+.titre_ass >h2{
     color:#222831;
-    padding: 5px;
+    font-size: 20px;
+    text-align: left;
+    padding: 0;
+    margin: 10px;
+
+
 }
 .assurance>ul{
-    list-style:none;
+    /*list-style:none;*/
     color:#222831;
 }
+.assurance>p{
+    color:#222831;
+    font-size: 15px;
+
+}
+.titre_ass{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.check >input {
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+}
+.checkbox{
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    position: relative;
+    bottom:20px;
+}
+.check > .checkbox:hover {
+    background-color: #ccc;
+}
+.check > input:checked ~ .checkbox {
+    background-color: #2196F3;
+}
+.check > .checkbox:after {
+    content: "";
+    position: relative;
+    display: none;
+}
+.check > input:checked ~ .checkbox:after {
+    display: block;
+}
+.check> .checkbox:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 #comparatif{
     color: black;
 }

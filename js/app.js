@@ -5,7 +5,7 @@ function init() {
             wh = $(window).height();
         scrollPercent = (scroll / (dh - wh)) * 100;
         $('#progressbar').css('height', 'calc(' + scrollPercent + '% - 84px)');
-        console.log('calc(' + scrollPercent + '% - 84px)')
+        //console.log('calc(' + scrollPercent + '% - 84px)')
         if (scrollPercent - 0.84 < 8) {
             $('#rocket').css('bottom', 0);
         } else {

@@ -14,6 +14,8 @@ html {
 }
 
 .container-vaisseaux {
+  position: relative;
+  float: right;
   width: 650px;
   height: 100%;
   background-color: #f1f2f6;
@@ -22,6 +24,13 @@ html {
   border-radius: 10px;
   box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.4);
   color: #2f3542;
+  margin: 0 100px;
+}
+
+.slider {
+  position: relative;
+  float: left;
+  padding: 100px;
 }
 
 .slider-vaisseaux {

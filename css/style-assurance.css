@@ -190,3 +190,9 @@ tr:nth-child(2n){
 .fa-times-circle{
     color: red;
 }
+#comparatif>h3{
+    color: #393e46;;
+    text-align: center;
+    width: 95%;
+    padding: 0;
+}

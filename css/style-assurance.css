@@ -1,5 +1,6 @@
 body>main{
     top:54px;
+    font-family: "Montserrat", sans-serif;
 }
 
 #resume{
@@ -132,7 +133,7 @@ html>body{
     background-color: #ccc;
 }
 .check > input:checked ~ .checkbox {
-    background-color: #2196F3;
+    background-color: #5dffac;
 }
 .check > .checkbox:after {
     content: "";
@@ -154,6 +155,38 @@ html>body{
     transform: rotate(45deg);
 }
 
-#comparatif{
+#comparatif {
     color: black;
+}
+table{
+    margin : 10px auto;
+    border-collapse:collapse;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
+}
+td,th {
+    border: 1px solid #d5dde2;
+    padding: 7px;
+    width: 130px;
+    text-align: center;
+}
+td:nth-child(1),th:nth-child(1){
+    width: auto;
+    text-align: left;
+}
+table >thead>tr>th{
+    background: #393e46;
+    color: white;
+    font-style: italic;
+}
+tr:nth-child(2n+1){
+    background-color: #fcfcfc;
+}
+tr:nth-child(2n){
+    background-color:#F2F1F3;
+}
+.fa-check-circle{
+    color: #00cb06;
+}
+.fa-times-circle{
+    color: red;
 }

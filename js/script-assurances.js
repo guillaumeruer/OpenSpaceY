@@ -44,7 +44,15 @@ function ajoutDansTableau(attr, listAssur){
         tr.append(td0);
         for(var elem of listAssur) {
             //nouvelle colonne
-            let td=$("<td></td>").text(elem.garanties.includes(a));
+            //let td=$("<td></td>").text(elem.garanties.includes(a));
+            let td;
+            if (elem.garanties.includes(a)){
+                console.log("ok");
+                td=$("<td></td>").html("<i class=\"fas fa-check-circle\"></i>");
+            }
+            else {
+                td=$("<td></td>").html("<i class=\"fas fa-times-circle\"></i>");
+            }
             tr.append(td);
         }
         tbody.append(tr);
@@ -65,7 +73,6 @@ function comparatif() {
 
                 let val=$(this).val();
                 let assur=getAssurance(val);
-                console.log(assur);
 
                 if($(this).is(':checked')){
 
@@ -84,8 +91,7 @@ function comparatif() {
                 }
 
             });
-            console.log(union);
-            console.log(AssurancesSelectionnees);
+
             ajoutDansTableau(union, AssurancesSelectionnees);
         }
         else { //aucune selection d'assurances

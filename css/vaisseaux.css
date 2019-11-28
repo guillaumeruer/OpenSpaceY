@@ -92,7 +92,13 @@ h1 {
 .ailes {
   position: absolute;
   left:0;
-  bottom:0;
+  top:0;
+}
+
+.reacteurs {
+  position: absolute;
+  left:0;
+  top:0
 }
 
 /* Bouton radio pour slider */

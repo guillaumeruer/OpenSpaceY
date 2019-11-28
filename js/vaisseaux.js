@@ -2,63 +2,127 @@ let i = 1;
 let j;
 
 
-$(document).ready(function () {
+$(document).ready(function() {
   $("#b2").attr("checked", true);
   console.log(sessionStorage.getItem("compteur"));
-  $("#b1v1").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
-  $("#b3v3").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
-  $("#b2v2").css("filter","invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+  $("#b1v1").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+  $("#b3v3").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+  $("#b2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+  $("#c2").attr("checked", true);
+  $(".grand").css("filter", "invert(17%) sepia(4%) saturate(1534%) hue-rotate(147deg) brightness(91%) contrast(87%)");
+  $("#a2").attr("checked", true);
+  $("#r2").attr("checked", true);
+  $(".slider").css("filter", "invert(21%) sepia(37%) saturate(5978%) hue-rotate(345deg) brightness(98%) contrast(84%)");
+  $("#r2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+  $("#a2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
 })
 
 
-$(".bouton-vaisseaux-bouton").on("click", function (event) {
+$(".bouton-vaisseaux-bouton").on("click", function(event) {
   boutonId = event.target.id;
   id = boutonId.replace("b", "")
 
   if (id == 1) {
-    $("#b1v1").css("filter","invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
-    $("#b2v2").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
-    $("#b3v3").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b1v1").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#b2v2").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b3v3").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
     $("#s1").fadeIn();
     $("#s2").css("display", "none");
     $("#s3").css("display", "none");
   }
 
   if (id == 2) {
-    $("#b1v1").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
-    $("#b3v3").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
-    $("#b2v2").css("filter","invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#b1v1").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b3v3").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
     $("#s1").css("display", "none")
     $("#s2").fadeIn();
     $("#s3").css("display", "none")
   }
 
   if (id == 3) {
-    $("#b1v1").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
-    $("#b2v2").css("filter","invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
-    $("#b3v3").css("filter","invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#b1v1").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b2v2").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#b3v3").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
     $("#s1").css("display", "none")
     $("#s2").css("display", "none")
     $("#s3").fadeIn();
   };
 })
 
-$(".couleur-vaisseaux").on("click",function(event){
+$(".couleur-vaisseaux").on("click", function(event) {
   couleurV = $("input[name='couleur']:checked").val();
 
-  if (couleurV == "Bordeaux"){
-      $(".slider").css("filter","invert(21%) sepia(37%) saturate(5978%) hue-rotate(345deg) brightness(98%) contrast(84%)");
+  if (couleurV == "Bordeaux") {
+    $(".slider").css("filter", "invert(21%) sepia(37%) saturate(5978%) hue-rotate(345deg) brightness(98%) contrast(84%)");
   }
-  if (couleurV == "Beige"){
-      $(".slider").css("filter","invert(82%) sepia(4%) saturate(4335%) hue-rotate(328deg) brightness(115%) contrast(121%)");
+  if (couleurV == "Beige") {
+    $(".slider").css("filter", "invert(82%) sepia(4%) saturate(4335%) hue-rotate(328deg) brightness(115%) contrast(121%)");
   }
-  if (couleurV == "Gris"){
-      $(".slider").css("filter","invert(17%) sepia(4%) saturate(1534%) hue-rotate(147deg) brightness(91%) contrast(87%)");
+  if (couleurV == "Gris") {
+    $(".slider").css("filter", "invert(17%) sepia(4%) saturate(1534%) hue-rotate(147deg) brightness(91%) contrast(87%)");
   }
-
 })
 
-$('#submitBtn').click(function () {
+$(".ailes-vaisseaux").on("click", function(event) {
+  ailesV = $("input[name='aile']:checked").val();
+
+  if (ailesV == "Shosson") {
+    $("#a1v1").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#a2v2").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#a3v3").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#aile-s1").css("display", "none");
+    $("#aile-s2").css("display", "none");
+    $("#aile-s3").fadeIn();
+  }
+  if (ailesV == "Papyon") {
+    $("#a3v3").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#a2v2").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#a1v1").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#aile-s1").css("display", "none");
+    $("#aile-s2").fadeIn();
+    $("#aile-s3").css("display", "none");
+  }
+  if (ailesV == "Halter") {
+    $("#a2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#a1v1").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#a3v3").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#aile-s1").fadeIn();
+    $("#aile-s2").css("display", "none");
+    $("#aile-s3").css("display", "none");
+  }
+})
+
+$(".reacteur-vaisseaux").on("click", function(event) {
+  reacV = $("input[name='reacteur']:checked").val();
+
+  if (reacV == "Radiohactiv") {
+    $("#r1v1").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#r2v2").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#r3v3").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#reac-s1").fadeIn();
+    $("#reac-s2").css("display", "none");
+    $("#reac-s3").css("display", "none");
+  }
+  if (reacV == "Tentakul") {
+    $("#r2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#r1v1").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#r3v3").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#reac-s1").css("display", "none");
+    $("#reac-s2").fadeIn();
+    $("#reac-s3").css("display", "none");
+  }
+  if (reacV == "Tronul") {
+    $("#r3v3").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+    $("#r2v2").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#r1v1").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
+    $("#reac-s1").css("display", "none");
+    $("#reac-s2").css("display", "none");
+    $("#reac-s3").fadeIn();
+  }
+})
+
+$('#submitBtn').click(function() {
   let type = $("input[name='type-vaisseau']:checked").val();
   let couleur = $("input[name='couleur']:checked").val();
   let aile = $("input[name='aile']:checked").val();

@@ -131,6 +131,14 @@ ul.fa-ul {
     font-size: 18px;
     padding: 25px 30px;
 }
+.infos{
+    color: rgba(67, 213, 248, 0.51);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 15px;
+    padding: 25px 30px;
+}
 
 .check >input {
     position: relative;
@@ -216,4 +224,3 @@ tr:nth-child(2n){
     width: 95%;
     padding: 0;
 }
-

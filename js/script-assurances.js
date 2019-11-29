@@ -67,7 +67,6 @@ function ajoutDansTableau(attr, listAssur){
             tr.append(td);
         }
         tbody.append(tr);
-
     }
     //ajout du prix dans le tableau
     let trPrix=$("<tr></tr>");
@@ -85,8 +84,6 @@ function ajoutDansTableau(attr, listAssur){
     tbody.append(trPrix);
     $("table").append(tbody);
 }
-
-
 
 function comparatif() {
     $("#comparatif > h3 ").text("Cocher les assurances à comparer pour faire apparaître le tableau comparatif");
@@ -124,4 +121,29 @@ function comparatif() {
 
     });
 }
+function clickInfos(){
+    $("#1").click(function(){
+        sessionStorage.setItem("assurance", 1);
+    });
+    $("#2").click(function(){
+        sessionStorage.setItem("assurance", 2);
+    });
+    $("#3").click(function(){
+        sessionStorage.setItem("assurance", 3);
+    });
+    $("#4").click(function(){
+        sessionStorage.setItem("assurance", 4);
+    });
+    $("#5").click(function(){
+        sessionStorage.setItem("assurance", 5);
+    });
+    $("#6").click(function(){
+        sessionStorage.setItem("assurance", 6);
+    });
+}
 
+
+$(document).ready(function() {
+    comparatif();
+    clickInfos();
+});

@@ -21,7 +21,6 @@ function init() {
         }
     })
 
-    comparatif();
 }
 
 window.onload = init;

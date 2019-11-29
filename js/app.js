@@ -1,4 +1,4 @@
-function init() {
+$(document).ready(function () {
     $(window).scroll(function () {
         var scroll = $(window).scrollTop(),
             dh = $(document).height(),
@@ -19,8 +19,10 @@ function init() {
         } else {
             $('#user').css("visibility", "hidden");
         }
-    })
+    });
 
-}
 
-window.onload = init;
+    $('.menu-toggle').click(function () {
+        $('nav').toggleClass('active')
+    });
+});

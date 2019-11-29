@@ -89,19 +89,29 @@ html>body{
     width: 100%;
     height: 100%;
     padding: 25px 30px;
+    padding-bottom: 50px;
+    position: relative;
 }
 .titre_ass >h2{
     color:#222831;
     font-size: 20px;
     text-align: left;
-    padding: 0;
-    margin: 10px;
+    padding: 0px;
+    margin: 0px;
 
 
 }
 .assurance>ul{
     /*list-style:none;*/
     color:#222831;
+    padding: 10px;
+    list-style-type: none;
+}
+ul.fa-ul {
+    margin: 0px;
+}
+.fa-meteor{
+    color: rgba(15, 0, 2, 0.65);
 }
 .assurance>p{
     color:#222831;
@@ -112,6 +122,14 @@ html>body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.prix{
+    color: #3ab7f8;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 18px;
+    padding: 25px 30px;
 }
 
 .check >input {
@@ -127,10 +145,12 @@ html>body{
     width: 25px;
     background-color: #eee;
     position: relative;
-    bottom:20px;
+    bottom:18px;
+    border: 1px solid #bbbbbb;
 }
 .check > .checkbox:hover {
     background-color: #ccc;
+    cursor: pointer;
 }
 .check > input:checked ~ .checkbox {
     background-color: #5dffac;
@@ -196,3 +216,4 @@ tr:nth-child(2n){
     width: 95%;
     padding: 0;
 }
+

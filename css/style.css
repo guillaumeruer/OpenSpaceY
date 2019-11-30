@@ -342,6 +342,12 @@ hr {
     position: absolute;
 }
 
+@media(max-width:1024px) {
+    nav {
+        width: 70%;
+    }
+}
+
 @media(max-width:768px) {
     .menu-toggle {
         display: block;

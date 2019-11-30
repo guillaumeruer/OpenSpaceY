@@ -321,7 +321,25 @@ hr {
 .produit {
     width: 100%;
     height: 100%;
-    padding: 10px 50px 40px 50px;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produit ul li {
+    padding: 5px 0;
+}
+
+.apercu {
+    width: 200px;
+    height: 100px;
+}
+
+.apercu img {
+    width: auto;
+    height: 100px;
+    position: absolute;
 }
 
 @media(max-width:768px) {
@@ -365,6 +383,10 @@ hr {
         width: 80%;
         height: 2px;
         background: rgba(0, 0, 0, 0.2);
+    }
+
+    .produit {
+        padding: 40px 80px 40px 40px;
     }
 
 

@@ -17,6 +17,7 @@ $(document).ready(function () {
         $('#pseudo').text(sessionStorage.getItem("login"));
     }
 
+    // authentification 
     $(".logbtn").click(function () {
         if ($("input[name=username]").val() == "user" && $("input[name=password]").val() == "password") {
             window.sessionStorage.setItem('login', 'user');

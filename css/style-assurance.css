@@ -1,119 +1,167 @@
-body>main{
-    top:54px;
+body>main {
+    top: 54px;
+    font-family: "Montserrat", sans-serif;
 }
 
-#resume{
-    background-image: url("../img/space3.jpg") ;
+#resume {
+    background-image: url("../img/space3.jpg");
     background-size: cover;
     text-align: center;
     font-family: "Montserrat", sans-serif;
-    padding:30px;
+    padding: 30px;
 }
-#titre{
+
+#titre {
     background-color: rgba(31, 31, 31, 0.67);
-    border:white solid 3px;
-    margin:auto;
+    border: white solid 3px;
+    margin: auto;
     width: 300px;
 }
-h3{
+
+h3 {
     font-size: 20px;
 }
-p{
+
+p {
     font-size: 16px;
 }
-#resume>ul{
-    list-style:none;
+
+#resume>ul {
+    list-style: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-#resume>ul>li:nth-child(1){
+#resume>ul>li:nth-child(1) {
     width: 40%;
     font-size: 20px;
     transform: rotate(-10deg);
 }
-#resume>ul>li:nth-child(2){
+
+#resume>ul>li:nth-child(2) {
     width: 60%;
     font-size: 25px;
     transform: rotate(5deg);
     padding-top: 10px;
 }
-#resume>ul>li:nth-child(3){
+
+#resume>ul>li:nth-child(3) {
     width: 90%;
     font-size: 18px;
     transform: rotate(-5deg);
     padding-top: 10px;
 }
-#resume>ul>li:nth-child(4){
+
+#resume>ul>li:nth-child(4) {
     width: 60%;
     text-align: left;
     font-size: 17px;
     transform: rotate(8deg);
     padding-top: 10px;
 }
-#resume>ul>li:nth-child(5){
+
+#resume>ul>li:nth-child(5) {
     width: 40%;
     font-size: 20px;
     text-align: right;
     transform: rotate(8deg);
 
 }
-#resume>ul>li:nth-child(6){
+
+#resume>ul>li:nth-child(6) {
     width: 70%;
     text-align: right;
     padding-top: 10px;
 }
-html>body{
+
+html>body {
     background-color: #f4f4f4;
 
 }
-#assurances-list{
+
+#assurances-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-right: 50px;
 }
+
 .border {
-    width: 30%;
+    width: 400px;
     margin: 20px 0px;
     background: linear-gradient(90deg, #42adf8, #00ff59);
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
     padding: 1px;
 
 }
-.assurance{
+
+.assurance {
     background-color: white;
     width: 100%;
     height: 100%;
     padding: 25px 30px;
+    padding-bottom: 50px;
+    position: relative;
 }
-.titre_ass >h2{
-    color:#222831;
+
+.titre_ass>h2 {
+    color: #222831;
     font-size: 20px;
     text-align: left;
-    padding: 0;
-    margin: 10px;
+    padding: 0px;
+    margin: 0px;
 
 
 }
-.assurance>ul{
+
+.assurance>ul {
     /*list-style:none;*/
-    color:#222831;
+    color: #222831;
+    padding: 10px;
+    list-style-type: none;
 }
-.assurance>p{
-    color:#222831;
+
+ul.fa-ul {
+    margin: 0px;
+}
+
+.fa-meteor {
+    color: rgba(15, 0, 2, 0.65);
+}
+
+.assurance>p {
+    color: #222831;
     font-size: 15px;
 
 }
-.titre_ass{
+
+.titre_ass {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.check >input {
+.prix {
+    color: #3ab7f8;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 18px;
+    padding: 25px 30px;
+}
+
+.infos {
+    color: rgba(67, 213, 248, 0.51);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 15px;
+    padding: 25px 30px;
+}
+
+.check>input {
     position: relative;
     opacity: 0;
     cursor: pointer;
@@ -121,28 +169,36 @@ html>body{
     width: 0;
 
 }
-.checkbox{
+
+.checkbox {
     height: 25px;
     width: 25px;
     background-color: #eee;
     position: relative;
-    bottom:20px;
+    bottom: 18px;
+    border: 1px solid #bbbbbb;
 }
-.check > .checkbox:hover {
+
+.check>.checkbox:hover {
     background-color: #ccc;
+    cursor: pointer;
 }
-.check > input:checked ~ .checkbox {
-    background-color: #2196F3;
+
+.check>input:checked~.checkbox {
+    background-color: #5dffac;
 }
-.check > .checkbox:after {
+
+.check>.checkbox:after {
     content: "";
     position: relative;
     display: none;
 }
-.check > input:checked ~ .checkbox:after {
+
+.check>input:checked~.checkbox:after {
     display: block;
 }
-.check> .checkbox:after {
+
+.check>.checkbox:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -154,6 +210,68 @@ html>body{
     transform: rotate(45deg);
 }
 
-#comparatif{
+#comparatif {
     color: black;
+}
+
+table {
+    margin: 10px auto;
+    border-collapse: collapse;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+td,
+th {
+    border: 1px solid #d5dde2;
+    padding: 7px;
+    width: 130px;
+    text-align: center;
+}
+
+td:nth-child(1),
+th:nth-child(1) {
+    width: auto;
+    text-align: left;
+}
+
+table>thead>tr>th {
+    background: #393e46;
+    color: white;
+    font-style: italic;
+}
+
+tr:nth-child(2n+1) {
+    background-color: #fcfcfc;
+}
+
+tr:nth-child(2n) {
+    background-color: #F2F1F3;
+}
+
+.fa-check-circle {
+    color: #00cb06;
+}
+
+.fa-times-circle {
+    color: red;
+}
+
+#comparatif>h3 {
+    color: #393e46;
+    ;
+    text-align: center;
+    width: 95%;
+    padding: 0;
+}
+
+@media(max-width:1024px) {
+    .border {
+        width: 350px;
+    }
+}
+
+@media(max-width:768px) {
+    .border {
+        width: 80%;
+    }
 }

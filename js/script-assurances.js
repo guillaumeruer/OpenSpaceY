@@ -2,26 +2,39 @@ class ass{
     val;
     nom;
     garanties;
-    constructor(val,nom,garanties){
+    prix;
+    constructor(val,nom,garanties,prix){
         this.val=val;
         this.nom=nom;
         this.garanties=garanties;
+        this.prix=prix;
     }
 }
-let ass_tiers=new ass("ass_tiers","Assurance au tiers",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance"]);
-let ass_intermediaire=new ass("ass_intermediaire","Assurance intermédiaire",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Bris de glace","Vol"]);
-let ass_aventureux=new ass("ass_aventureux","Assurance Aventureux",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Incendie","Catastrophes"]);
-let ass_frequentation=new ass("ass_frequentation","Assurance mauvaise fréquentation",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Vol","Vandalisme"]);
-let ass_toutRisques=new ass("ass_toutRisques","Assurance tout risques",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Bris de glace","Vol","Incendie","Catastrophes","Vandalisme","Dommages tout accidents"]);
-let ass_luxe=new ass("ass_luxe","Assurance luxe",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Bris de glace","Vol","Incendie","Catastrophes","Vandalisme","Dommages tout accidents","Véhicule de remplacement","Panne mécanique","Effets personnels"]);
+let ass_tiers=new ass("ass_tiers","Assurance au tiers",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance"],47.49);
+let ass_intermediaire=new ass("ass_intermediaire","Assurance intermédiaire",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Bris de glace","Vol"],59.15);
+let ass_aventureux=new ass("ass_aventureux","Assurance Aventureux",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Incendie","Catastrophes"],63.19);
+let ass_frequentation=new ass("ass_frequentation","Assurance mauvaises fréquentations",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Vol","Vandalisme"],65.75);
+let ass_toutRisques=new ass("ass_toutRisques","Assurance tout risques",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Bris de glace","Vol","Incendie","Catastrophes","Vandalisme","Dommages tout accidents"],88.53);
+let ass_luxe=new ass("ass_luxe","Assurance luxe",["Responsabilité civile","Protection juridique en cas d'accident","Garantie du conducteur","Assistance","Bris de glace","Vol","Incendie","Catastrophes","Vandalisme","Dommages tout accidents","Véhicule de remplacement","Panne mécanique","Effets personnels"],112.68);
 
 LesAssurances=[ass_tiers,ass_intermediaire,ass_aventureux,ass_frequentation,ass_toutRisques,ass_luxe];
 
 function getAssurance(valeur) {
-    //permet de récupérer la bonne classe de l'assurance via la valeur de l'input
+    //permet de récupérer la bonne classe de l'assurance via la valeur de la checkbox
     let obj=LesAssurances.find(assurance => assurance.val==valeur);
     return obj;
 }
+
+function minPrix(list){
+    let min=list[0].prix;
+    for(var element of list){
+        if(element.prix<min){
+            min=element.prix;
+        }
+    }
+    return min;
+}
+
 function ajoutDansTableau(attr, listAssur){
     //création du tableau comparatif
     //ligne header
@@ -30,7 +43,7 @@ function ajoutDansTableau(attr, listAssur){
     let th0=$("<th></th>").text("Garanties");
     tr0.append(th0);
     for(var elem of listAssur) {
-        //nouvelle colonne header
+        //nouvelles colonnes header avec les noms des assurances
         let th=$("<th></th>").text(elem.nom);
         tr0.append(th);
     }
@@ -38,25 +51,44 @@ function ajoutDansTableau(attr, listAssur){
     $("table").append(thead);
     let tbody=$("<tbody></tbody>");
     for(var a of attr){
-        //nouvelle ligne
+        //nouvelle ligne pour une garantie donnée
         let tr=$("<tr></tr>");
         let td0=$("<td></td>").text(a);
         tr.append(td0);
         for(var elem of listAssur) {
-            //nouvelle colonne
-            let td=$("<td></td>").text(elem.garanties.includes(a));
+            //pour chaque colonne (pour chaque assurance) on vérifie si la garantie est présente ou non
+            let td;
+            if (elem.garanties.includes(a)){ //garantie présente
+                td=$("<td></td>").html("<i class=\"fas fa-check-circle\"></i>");
+            }
+            else { //garantie non présente
+                td=$("<td></td>").html("<i class=\"fas fa-times-circle\"></i>");
+            }
             tr.append(td);
         }
         tbody.append(tr);
-        $("table").append(tbody);
     }
+    //ajout du prix dans le tableau
+    let trPrix=$("<tr></tr>");
+    let tdPrix=$("<td></td>").text("prix");
+    trPrix.append(tdPrix);
+    for(var assur of listAssur){
+        let tdP;
+        tdP=$("<td></td>").html(assur.prix);
+
+        if(assur.prix==minPrix(listAssur)){
+            tdP.css("background-color", "#00cb06");
+        }
+        trPrix.append(tdP);
+    }
+    tbody.append(trPrix);
+    $("table").append(tbody);
 }
 
-
-
 function comparatif() {
-
+    $("#comparatif > h3 ").text("Cocher les assurances à comparer pour faire apparaître le tableau comparatif");
     $(".ass").click(function(){
+        $("#comparatif > h3 ").text("");
         $("table").html(""); //intialisation du tableau comparatif à chaque nouvelle selection
         if($(".ass").is(':checked')){ //au moins une assurance est selectionnée
             let AssurancesSelectionnees=[];
@@ -65,7 +97,6 @@ function comparatif() {
 
                 let val=$(this).val();
                 let assur=getAssurance(val);
-                console.log(assur);
 
                 if($(this).is(':checked')){
 
@@ -77,21 +108,42 @@ function comparatif() {
                         union_array.push(element);
                     }
                     union=union_array;
-
                     //on récupére les assurances selectionnées
                     AssurancesSelectionnees.push(assur);
-
                 }
-
             });
-            console.log(union);
-            console.log(AssurancesSelectionnees);
             ajoutDansTableau(union, AssurancesSelectionnees);
         }
         else { //aucune selection d'assurances
             console.log("aucun");
+            $("#comparatif > h3 ").text("Cocher les assurances à comparer pour faire apparaître le tableau comparatif");
         }
 
     });
 }
+function clickInfos(){
+    $("#1").click(function(){
+        sessionStorage.setItem("assurance", 1);
+    });
+    $("#2").click(function(){
+        sessionStorage.setItem("assurance", 2);
+    });
+    $("#3").click(function(){
+        sessionStorage.setItem("assurance", 3);
+    });
+    $("#4").click(function(){
+        sessionStorage.setItem("assurance", 4);
+    });
+    $("#5").click(function(){
+        sessionStorage.setItem("assurance", 5);
+    });
+    $("#6").click(function(){
+        sessionStorage.setItem("assurance", 6);
+    });
+}
 
+
+$(document).ready(function() {
+    comparatif();
+    clickInfos();
+});

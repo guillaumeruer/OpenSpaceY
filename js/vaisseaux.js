@@ -112,10 +112,10 @@ $(document).ready(function () {
   }
 })
 
-$("#logo").hover(function(){
-  $("#logo").css("filter","invert(88%) sepia(25%) saturate(6729%) hue-rotate(79deg) brightness(107%) contrast(116%)")
-}, function(){
-  $("#logo").css("filter","invert(65%) sepia(15%) saturate(6776%) hue-rotate(178deg) brightness(100%) contrast(95%)")
+$("#logo").hover(function () {
+  $("#logo").css("filter", "invert(88%) sepia(25%) saturate(6729%) hue-rotate(79deg) brightness(107%) contrast(116%)")
+}, function () {
+  $("#logo").css("filter", "invert(65%) sepia(15%) saturate(6776%) hue-rotate(178deg) brightness(100%) contrast(95%)")
 })
 
 $(".bouton-vaisseaux-bouton").on("click", function (event) {
@@ -187,8 +187,8 @@ $(".ailes-vaisseaux").on("click", function (event) {
     $("#a1v1").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
     $("#a2v2").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
     $("#a3v3").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
-    $("#aile-s2").fadeIn();
-    $("#aile-s1").css("display", "none");
+    $("#aile-s1").fadeIn();
+    $("#aile-s2").css("display", "none");
     $("#aile-s3").css("display", "none");
   }
 })

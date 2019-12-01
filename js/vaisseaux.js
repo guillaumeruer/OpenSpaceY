@@ -15,8 +15,14 @@ $(document).ready(function() {
   $(".slider").css("filter", "invert(21%) sepia(37%) saturate(5978%) hue-rotate(345deg) brightness(98%) contrast(84%)");
   $("#r2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
   $("#a2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
+  $("#logo").css("filter","invert(65%) sepia(15%) saturate(6776%) hue-rotate(178deg) brightness(100%) contrast(95%)")
 })
 
+$("#logo").hover(function(){
+  $("#logo").css("filter","invert(88%) sepia(25%) saturate(6729%) hue-rotate(79deg) brightness(107%) contrast(116%)")
+}, function(){
+  $("#logo").css("filter","invert(65%) sepia(15%) saturate(6776%) hue-rotate(178deg) brightness(100%) contrast(95%)")  
+})
 
 $(".bouton-vaisseaux-bouton").on("click", function(event) {
   boutonId = event.target.id;

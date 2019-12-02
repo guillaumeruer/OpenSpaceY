@@ -1,27 +1,37 @@
-#tiers,#intermediaire,#toutRisques,#luxe,#aventureux,#frequentations{
+#tiers,
+#intermediaire,
+#toutRisques,
+#luxe,
+#aventureux,
+#frequentations {
     display: none;
 }
-body>main{
-    top:54px;
+
+body>main {
+    top: 54px;
     font-family: "Montserrat", sans-serif;
 }
-.type-assurance{
-   background-color: white;
+
+.type-assurance {
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items:center;
+    align-items: center;
     padding: 30px 0px;
 }
-img{
+
+img {
     width: 80px;
 }
-.type-assurance> .img-space >h2{
+
+.type-assurance>.img-space>h2 {
     color: #2d3436;
     font-size: 40px;
 
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -29,32 +39,41 @@ img{
     margin: 65px;
     margin-right: 80px;
 }
-.paragraphe{
+
+.paragraphe {
     width: 45%;
 }
-.garanties{
+
+.garanties {
     width: 45%;
     color: #2f3542;
     background-color: #F2F1F3;
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
     padding: 15px;
 }
-.garanties>p,.garanties>ul{
+
+.garanties>p,
+.garanties>ul {
     color: #2f3542;
     padding: 10px;
 }
-.garanties>ul>li{
+
+.garanties>ul>li {
     padding: 5px;
 }
-.fa-meteor{
+
+.fa-meteor {
     color: rgba(15, 0, 2, 0.65);
 }
-.paragraphe>p:nth-child(2){
+
+.paragraphe>p:nth-child(2) {
     padding: 20px 0px;
     font-size: 30px;
     color: #43cfff;
 }
-.paragraphe>p:nth-child(1),.paragraphe>p:nth-child(3){
+
+.paragraphe>p:nth-child(1),
+.paragraphe>p:nth-child(3) {
     padding: 20px 0px;
     font-size: 18px;
     color: #f0f0f0;

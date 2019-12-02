@@ -344,6 +344,12 @@ hr {
     position: absolute;
 }
 
+#total {
+    padding-top: 20px;
+    padding-right: 100px;
+    float: right;
+}
+
 @media(max-width:1024px) {
     nav {
         width: 70%;

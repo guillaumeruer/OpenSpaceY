@@ -226,3 +226,12 @@ hr {
     width: 70%;
   }
 }
+
+
+.container-vaisseaux p {
+  color: #2d3436;
+}
+
+#prix::before {
+  content: '$';
+}

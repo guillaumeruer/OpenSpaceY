@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    let prixTot = 0;
     let j = parseInt(sessionStorage.getItem("compteur"));
     console.log(j);
     let i = 1;
@@ -53,6 +54,11 @@ $(document).ready(function () {
             apercu.appendChild(clickable);
             prod.appendChild(apercu);
 
+            prixTot += vaisseau.prix;
+            let prix = document.createElement('p');
+            prix.innerText = "$" + vaisseau.prix.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            prod.appendChild(prix);
             let btnRemove = document.createElement('i');
             btnRemove.setAttribute('class', "far fa-trash-alt");
 
@@ -75,5 +81,7 @@ $(document).ready(function () {
         sessionStorage.removeItem(v);
         $(this).parent().remove();
     })
+
+    document.getElementById("prixTotal").innerText = '$' + prixTot.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 });

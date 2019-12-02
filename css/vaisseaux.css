@@ -1,4 +1,8 @@
 /* palette : https://flatuicolors.com/palette/cn */
+main{
+  top:100px;
+}
+
 html {
   box-sizing: border-box;
 }

@@ -1,6 +1,10 @@
 let i = 1;
 let j;
-
+let prix = 0;
+let prix_type = 0;
+let prix_ailes = 0;
+let prix_couleur = 0;
+let prix_reacteur = 0;
 
 $(document).ready(function () {
 
@@ -19,6 +23,13 @@ $(document).ready(function () {
     $("#r2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
     $("#a2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
 
+    prix_type = 30000;
+    prix_couleur = 1000;
+    prix_ailes = 5000;
+    prix_reacteur = 15000;
+    prix = prix_type + prix_couleur + prix_ailes + prix_reacteur;
+    document.getElementById('prix').innerText = prix.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
   } else {
     let i = sessionStorage.getItem('idActuel');
     let v = JSON.parse(sessionStorage.getItem(i));
@@ -30,6 +41,7 @@ $(document).ready(function () {
         $("#s1").fadeIn();
         $("#s2").css("display", "none");
         $("#s3").css("display", "none");
+        prix_type = 25000;
         break;
       case "Zetrounwar":
         $("#b2").attr("checked", true);
@@ -37,6 +49,7 @@ $(document).ready(function () {
         $("#s2").fadeIn();
         $("#s1").css("display", "none");
         $("#s3").css("display", "none");
+        prix_type = 30000;
         break;
       case "Unmetaihor":
         $("#b3").attr("checked", true);
@@ -44,6 +57,7 @@ $(document).ready(function () {
         $("#s3").fadeIn();
         $("#s2").css("display", "none");
         $("#s1").css("display", "none");
+        prix_type = 35000;
         break;
     }
 
@@ -51,14 +65,17 @@ $(document).ready(function () {
       case "Beige":
         $("#c1").attr("checked", true);
         $(".slider").css("filter", "invert(82%) sepia(4%) saturate(4335%) hue-rotate(328deg) brightness(115%) contrast(121%)");
+        prix_couleur = 250;
         break;
       case "Bordeaux":
         $("#c2").attr("checked", true);
         $(".slider").css("filter", "invert(21%) sepia(37%) saturate(5978%) hue-rotate(345deg) brightness(98%) contrast(84%)");
+        prix_couleur = 1000;
         break;
       case "Gris":
         $("#c3").attr("checked", true);
         $(".slider").css("filter", "invert(17%) sepia(4%) saturate(1534%) hue-rotate(147deg) brightness(91%) contrast(87%)");
+        prix_couleur = 500;
         break;
     }
 
@@ -69,6 +86,7 @@ $(document).ready(function () {
         $("#aile-s1").css("display", "none");
         $("#aile-s2").css("display", "none");
         $("#aile-s1").fadeIn();
+        prix_ailes = 7500;
         break;
       case "Halter":
         $("#a2").attr("checked", true);
@@ -76,6 +94,7 @@ $(document).ready(function () {
         $("#aile-s1").css("display", "none");
         $("#aile-s3").css("display", "none");
         $("#aile-s2").fadeIn();
+        prix_ailes = 5000;
         break;
       case "Papyon":
         $("#a3").attr("checked", true);
@@ -83,6 +102,7 @@ $(document).ready(function () {
         $("#aile-s1").css("display", "none");
         $("#aile-s2").css("display", "none");
         $("#aile-s3").fadeIn();
+        prix_ailes = 8000;
         break;
     }
 
@@ -93,6 +113,7 @@ $(document).ready(function () {
         $("#reac-s1").fadeIn();
         $("#reac-s2").css("display", "none");
         $("#reac-s3").css("display", "none");
+        prix_reacteur = 10000;
         break;
       case "Tentakul":
         $("#r2").attr("checked", true);
@@ -100,6 +121,7 @@ $(document).ready(function () {
         $("#reac-s2").fadeIn();
         $("#reac-s3").css("display", "none");
         $("#reac-s1").css("display", "none");
+        prix_reacteur = 15000;
         break;
       case "Tronul":
         $("#r3").attr("checked", true);
@@ -107,8 +129,11 @@ $(document).ready(function () {
         $("#reac-s3").fadeIn();
         $("#reac-s2").css("display", "none");
         $("#reac-s1").css("display", "none");
+        prix_reacteur = 5000;
         break;
     }
+    prix = prix_type + prix_couleur + prix_ailes + prix_reacteur;
+    document.getElementById('prix').innerText = prix.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 })
 
@@ -124,25 +149,31 @@ $(".bouton-vaisseaux-bouton").on("click", function (event) {
     $("#s1").fadeIn();
     $("#s2").css("display", "none");
     $("#s3").css("display", "none");
+    prix_type = 25000;
   }
 
   if (id == 2) {
     $("#b1v1").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
     $("#b3v3").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
     $("#b2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
-    $("#s1").css("display", "none")
+    $("#s1").css("display", "none");
     $("#s2").fadeIn();
-    $("#s3").css("display", "none")
+    $("#s3").css("display", "none");
+    prix_type = 30000;
   }
 
   if (id == 3) {
     $("#b1v1").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
     $("#b2v2").css("filter", "invert(20%) sepia(10%) saturate(1130%) hue-rotate(183deg) brightness(91%) contrast(92%)");
     $("#b3v3").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
-    $("#s1").css("display", "none")
-    $("#s2").css("display", "none")
+    $("#s1").css("display", "none");
+    $("#s2").css("display", "none");
     $("#s3").fadeIn();
-  };
+    prix_type = 35000;
+  }
+  prix = prix_type + prix_couleur + prix_ailes + prix_reacteur;
+  document.getElementById('prix').innerText = prix.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
 })
 
 $(".couleur-vaisseaux").on("click", function (event) {
@@ -150,13 +181,18 @@ $(".couleur-vaisseaux").on("click", function (event) {
 
   if (couleurV == "Bordeaux") {
     $(".slider").css("filter", "invert(21%) sepia(37%) saturate(5978%) hue-rotate(345deg) brightness(98%) contrast(84%)");
+    prix_couleur = 1000;
   }
   if (couleurV == "Beige") {
     $(".slider").css("filter", "invert(82%) sepia(4%) saturate(4335%) hue-rotate(328deg) brightness(115%) contrast(121%)");
+    prix_couleur = 250;
   }
   if (couleurV == "Gris") {
     $(".slider").css("filter", "invert(17%) sepia(4%) saturate(1534%) hue-rotate(147deg) brightness(91%) contrast(87%)");
+    prix_couleur = 500;
   }
+  prix = prix_type + prix_couleur + prix_ailes + prix_reacteur;
+  document.getElementById('prix').innerText = prix.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 })
 
 $(".ailes-vaisseaux").on("click", function (event) {
@@ -169,6 +205,7 @@ $(".ailes-vaisseaux").on("click", function (event) {
     $("#aile-s1").css("display", "none");
     $("#aile-s2").css("display", "none");
     $("#aile-s3").fadeIn();
+    prix_ailes = 8000;
   }
   if (ailesV == "Halter") {
     $("#a2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
@@ -177,6 +214,7 @@ $(".ailes-vaisseaux").on("click", function (event) {
     $("#aile-s1").css("display", "none");
     $("#aile-s2").fadeIn();
     $("#aile-s3").css("display", "none");
+    prix_ailes = 5000;
   }
   if (ailesV == "Shosson") {
     $("#a1v1").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
@@ -185,7 +223,10 @@ $(".ailes-vaisseaux").on("click", function (event) {
     $("#aile-s1").fadeIn();
     $("#aile-s2").css("display", "none");
     $("#aile-s3").css("display", "none");
+    prix_ailes = 7500;
   }
+  prix = prix_type + prix_couleur + prix_ailes + prix_reacteur;
+  document.getElementById('prix').innerText = prix.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 })
 
 $(".reacteur-vaisseaux").on("click", function (event) {
@@ -198,6 +239,7 @@ $(".reacteur-vaisseaux").on("click", function (event) {
     $("#reac-s1").fadeIn();
     $("#reac-s2").css("display", "none");
     $("#reac-s3").css("display", "none");
+    prix_reacteur = 10000;
   }
   if (reacV == "Tentakul") {
     $("#r2v2").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
@@ -206,6 +248,7 @@ $(".reacteur-vaisseaux").on("click", function (event) {
     $("#reac-s1").css("display", "none");
     $("#reac-s2").fadeIn();
     $("#reac-s3").css("display", "none");
+    prix_reacteur = 15000;
   }
   if (reacV == "Tronul") {
     $("#r3v3").css("filter", "invert(79%) sepia(13%) saturate(2488%) hue-rotate(83deg) brightness(92%) contrast(80%)");
@@ -214,7 +257,11 @@ $(".reacteur-vaisseaux").on("click", function (event) {
     $("#reac-s1").css("display", "none");
     $("#reac-s2").css("display", "none");
     $("#reac-s3").fadeIn();
+    prix_reacteur = 5000;
   }
+
+  prix = prix_type + prix_couleur + prix_ailes + prix_reacteur;
+  document.getElementById('prix').innerText = prix.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 })
 
 $('#submitBtn').click(function () {
@@ -227,7 +274,8 @@ $('#submitBtn').click(function () {
     "type": type,
     "couleur": couleur,
     "aile": aile,
-    "reacteur": reacteur
+    "reacteur": reacteur,
+    "prix": prix
   }
   if (sessionStorage.getItem('idActuel') == null) {
 
@@ -246,9 +294,8 @@ $('#submitBtn').click(function () {
   } else {
 
     let id = sessionStorage.getItem('idActuel');
-    sessionStorage.setItem(id, JSON.stringify(vaisseau))
+    sessionStorage.setItem(id, JSON.stringify(vaisseau));
     sessionStorage.removeItem('idActuel');
   }
-
   window.location = "panier.html";
 });

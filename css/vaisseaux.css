@@ -17,12 +17,11 @@ html {
   width: 650px;
   height: 100%;
   background-color: #dfe4ea;
-  margin: auto;
   border: solid 7px #ff4757;
   border-radius: 10px;
   box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.4);
   color: #2f3542;
-  margin: 0 100px;
+  margin-right: 80px;
 }
 
 .slider-container {
@@ -97,8 +96,8 @@ h1 {
 
 .reacteurs {
   position: absolute;
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
 }
 
 /* Bouton radio pour slider */
@@ -192,6 +191,23 @@ hr {
   width: 80%;
   margin: 20px auto;
 }
+
+@media(max-width:1300px) {
+
+  .slider-container {
+    padding: 20px 0;
+    clear: both;
+    width: 100%;
+    margin: auto;
+  }
+
+  .container-vaisseaux {
+    clear: both;
+    width: 80%;
+    margin: 10%;
+  }
+}
+
 
 @media(max-width:768px) {
   main {

@@ -10,7 +10,8 @@ body>main {
     font-family: "Montserrat", sans-serif;
     padding: 30px;
 }
-#resume>p{
+
+#resume>p {
     text-align: center;
 }
 
@@ -155,8 +156,13 @@ ul.fa-ul {
     padding: 5px 30px;
 }
 
+.assurance a {
+    width: auto;
+    height: auto;
+}
+
 .infos {
-    color: rgba(67, 213, 248, 0.51);
+    color: rgba(80, 200, 238, 1);
     position: absolute;
     bottom:20px;
     right: 0px;

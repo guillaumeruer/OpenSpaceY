@@ -31,11 +31,11 @@ $(document).ready(function () {
             let clickable = document.createElement('a');
             clickable.setAttribute('href', 'vaisseaux.html');
             let imgV = document.createElement("img");
-            imgV.setAttribute('src', '../img/slider/vaisseaux/' + vaisseau.type + '.png');
+            imgV.setAttribute('src', 'img/slider/vaisseaux/' + vaisseau.type + '.png');
             let imgA = document.createElement("img");
-            imgA.setAttribute('src', '../img/slider/ailes/' + vaisseau.aile + '.png');
+            imgA.setAttribute('src', 'img/slider/ailes/' + vaisseau.aile + '.png');
             let imgR = document.createElement("img");
-            imgR.setAttribute('src', '../img/slider/reacteurs/' + vaisseau.reacteur + '.png');
+            imgR.setAttribute('src', 'img/slider/reacteurs/' + vaisseau.reacteur + '.png');
 
             let couleurIMG = vaisseau.couleur;
             if (couleurIMG == "Bordeaux") {

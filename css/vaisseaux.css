@@ -1,18 +1,15 @@
 /* palette : https://flatuicolors.com/palette/cn */
-main{
-  top:100px;
+main {
+  top: 100px;
 }
 
-html {
-  box-sizing: border-box;
-}
 
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 .container-vaisseaux {
@@ -234,6 +231,8 @@ hr {
 
 .container-vaisseaux p {
   color: #2d3436;
+  text-align: center;
+  width: 100%;
 }
 
 #prix::before {

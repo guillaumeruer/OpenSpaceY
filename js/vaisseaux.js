@@ -8,6 +8,7 @@ let prix_reacteur = 0;
 
 $(document).ready(function () {
 
+  // Si idactuel est null, affichage classique
   if (sessionStorage.getItem('idActuel') == null) {
     $("#b2").attr("checked", true);
     $("#a2").attr("checked", true);
@@ -30,10 +31,11 @@ $(document).ready(function () {
     prix = prix_type + prix_couleur + prix_ailes + prix_reacteur;
     document.getElementById('prix').innerText = prix.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-  } else {
+  } else { // sinon
     let i = sessionStorage.getItem('idActuel');
     let v = JSON.parse(sessionStorage.getItem(i));
 
+    // afficher le vaisseau idactuel
     switch (v.type) {
       case "Lessaturn":
         $("#b1").attr("checked", true);
@@ -137,7 +139,7 @@ $(document).ready(function () {
   }
 })
 
-
+// boutons du formulaire
 $(".bouton-vaisseaux-bouton").on("click", function (event) {
   boutonId = event.target.id;
   id = boutonId.replace("b", "")
@@ -269,7 +271,7 @@ $('#submitBtn').click(function () {
   let couleur = $("input[name='couleur']:checked").val();
   let aile = $("input[name='aile']:checked").val();
   let reacteur = $("input[name='reacteur']:checked").val();
-
+  // creation d'un objet vaisseau
   let vaisseau = {
     "type": type,
     "couleur": couleur,
@@ -277,25 +279,28 @@ $('#submitBtn').click(function () {
     "reacteur": reacteur,
     "prix": prix
   }
+  // s'il n'y a pas d'idactuel on stocke un nouveau vaisseau
   if (sessionStorage.getItem('idActuel') == null) {
-
+    // si le compteur n'est pas initialisé
     if (sessionStorage.getItem("compteur") === null || sessionStorage.getItem("compteur") === undefined || isNaN(sessionStorage.getItem("compteur"))) {
       sessionStorage.setItem("compteur", i);
       j = 1;
-    } else {
+    } else { // sinon on l'incrémente
       j = parseInt(sessionStorage.getItem("compteur"));
       j += 1;
       sessionStorage.setItem("compteur", j);
     }
+    //stocker le vaisseau
     let id = "vaisseau" + j;
-    console.log(id);
+    //console.log(id);
     sessionStorage.setItem(id, JSON.stringify(vaisseau));
 
   } else {
-
+    // modification d'un vaisseau existant
     let id = sessionStorage.getItem('idActuel');
     sessionStorage.setItem(id, JSON.stringify(vaisseau));
     sessionStorage.removeItem('idActuel');
   }
+  // on va au panier
   window.location = "panier.html";
 });

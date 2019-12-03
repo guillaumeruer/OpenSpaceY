@@ -1,15 +1,22 @@
 $(document).ready(function () {
+
     let prixTot = 0;
     let j = parseInt(sessionStorage.getItem("compteur"));
-    console.log(j);
+    //console.log(j);
     let i = 1;
+
+    //VAISSEAUX
     while (i <= j) {
+        // condition necessaire car on peut supprimer des items
         if (sessionStorage.getItem("vaisseau" + i) != null) {
-            console.log("vaisseau" + i);
+            //console.log("vaisseau" + i);
             var vaisseau = JSON.parse(sessionStorage.getItem("vaisseau" + i));
+
             let prod = document.createElement("div");
             prod.setAttribute('class', 'produit');
             prod.setAttribute('id', 'vaisseau' + i);
+
+            // ATTRIBUTS DU VAISSEAU
             let type = document.createElement("h3");
             type.innerText = vaisseau.type;
             prod.appendChild(type);
@@ -54,14 +61,14 @@ $(document).ready(function () {
             apercu.appendChild(clickable);
             prod.appendChild(apercu);
 
+            // gestion du prix
             prixTot += vaisseau.prix;
             let prix = document.createElement('p');
             prix.innerText = "$" + vaisseau.prix.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
             prod.appendChild(prix);
+            // bouton remove
             let btnRemove = document.createElement('i');
             btnRemove.setAttribute('class', "far fa-trash-alt");
-
             prod.appendChild(btnRemove);
 
             let hr = document.createElement("hr");
@@ -69,6 +76,39 @@ $(document).ready(function () {
             document.querySelector(".liste-prod").appendChild(hr);
         }
         i += 1;
+    }
+
+    // ASSURANCES
+    let k = parseInt(sessionStorage.getItem("compteurAssurance"));
+    while (k > 0) {
+        if (sessionStorage.getItem(k) != null) {
+            let a = JSON.parse(sessionStorage.getItem(k));
+            let prod = document.createElement("div");
+            prod.setAttribute('class', "produit");
+            prod.setAttribute('id', k);
+
+            //nom de l'assurance
+            let nom = document.createElement("h3");
+            nom.innerText = a.nom;
+            prod.appendChild(nom);
+            document.querySelector(".liste-prod").appendChild(prod);
+
+            //prix
+            let prix = document.createElement('p');
+            prix.innerText = "$" + ((a.prix) * 12).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " (Pour 12 mois)";
+            let p = a.prix * 12;
+            prixTot += p;
+            prod.appendChild(prix);
+
+            // bouton remove
+            let btnRemove = document.createElement('i');
+            btnRemove.setAttribute('class', "far fa-trash-alt");
+            prod.appendChild(btnRemove);
+
+            let hr = document.createElement("hr");
+            document.querySelector(".liste-prod").appendChild(hr);
+        }
+        k -= 1;
     }
 
     $(".produit .apercu").click(function () {
@@ -80,8 +120,11 @@ $(document).ready(function () {
         let v = $(this).parent().attr('id');
         sessionStorage.removeItem(v);
         $(this).parent().remove();
-    })
+    });
 
+    //Arrondir le prix total pour éviter les nombres incensés
+    prixTot = Math.round(prixTot * 100) / 100;
+    // formatter l'affichage
     document.getElementById("prixTotal").innerText = '$' + prixTot.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 });

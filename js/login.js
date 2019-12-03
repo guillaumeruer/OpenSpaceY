@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //gestion des boutons
     $(".textb input").on("focus", function () {
         $(this).addClass("focus");
     });
@@ -9,7 +10,7 @@ $(document).ready(function () {
         }
     });
 
-
+    // s'il n'y a pas d'objet login on n'affiche pas la déconnexion
     if (sessionStorage.getItem("login") === undefined || sessionStorage.getItem("login") === null) {
         $('.logout').css('display', 'none');
     } else {
@@ -28,6 +29,7 @@ $(document).ready(function () {
         }
     });
 
+    // bouton déconnection
     $(".logoutbtn").click(function () {
         sessionStorage.removeItem("login");
         window.location = "index.html";

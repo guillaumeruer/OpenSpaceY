@@ -141,13 +141,23 @@ function clickInfos() {
     });
 }
 
-function assurancePanier(){
+function assurancePanier() {
     //fonction retournant l'assurance cliquée pour l'ajout au panier
     $(".button").click(function () {
+        let k;
         let val = $(this).val();
         let assur = getAssurance(val);
         console.log(assur);
-        return assur; //retourne l'objet assurance : pour avoir le nom de l'assurance assur.nom et pour le prix assur.prix
+        if (sessionStorage.getItem("compteurAssurance") === null || sessionStorage.getItem("compteurAssurance") === undefined || isNaN(sessionStorage.getItem("compteurAssurance"))) {
+            sessionStorage.setItem("compteurAssurance", 1);
+        } else {
+            k = parseInt(sessionStorage.getItem("compteurAssurance"));
+            k += 1;
+            sessionStorage.setItem("compteurAssurance", k);
+        }
+        k = sessionStorage.getItem("compteurAssurance");
+        alert(k);
+        sessionStorage.setItem(k, JSON.stringify(assur)); //retourne l'objet assurance
     })
 
 }

@@ -156,7 +156,6 @@ function assurancePanier() {
             sessionStorage.setItem("compteurAssurance", k);
         }
         k = sessionStorage.getItem("compteurAssurance");
-        alert(k);
         sessionStorage.setItem(k, JSON.stringify(assur)); //retourne l'objet assurance
     })
 

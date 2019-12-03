@@ -119,7 +119,7 @@ $(document).ready(function () {
     $(".produit i").click(function () {
         let v = $(this).parent().attr('id');
         sessionStorage.removeItem(v);
-        $(this).parent().remove();
+        location.reload();
     });
 
     //Arrondir le prix total pour éviter les nombres incensés

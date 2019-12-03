@@ -141,8 +141,20 @@ function clickInfos() {
     });
 }
 
+function assurancePanier(){
+    //fonction retournant l'assurance cliquée pour l'ajout au panier
+    $(".button").click(function () {
+        let val = $(this).val();
+        let assur = getAssurance(val);
+        console.log(assur);
+        return assur; //retourne l'objet assurance : pour avoir le nom de l'assurance assur.nom et pour le prix assur.prix
+    })
+
+}
 
 $(document).ready(function () {
     comparatif();
     clickInfos();
+    assurancePanier();
+
 });

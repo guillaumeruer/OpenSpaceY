@@ -482,7 +482,7 @@ hr {
         content: "";
         position: absolute;
         left: 10%;
-        margin-top: 50px;
+        margin-top: 10px;
         width: 80%;
         height: 2px;
         background: rgba(0, 0, 0, 0.2);
